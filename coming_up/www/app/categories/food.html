@@ -1,0 +1,44 @@
+
+<ion-content>
+
+    <div class="main">
+        <!--<ion-slide-box on-slide-changed="slideChanged(index)">-->
+        <div class="date">
+            <select ng-model="selectedDate" ng-model-options="{updateOn: 'default blur', debounce:{default:300, blur: 0}}" ng-change="updateEvents()">
+                <option value="today">Today</option>
+                <option value="tomorrow">Tomorrow</option>
+                <option value="this_week">This Week</option>
+                <option value="next_week">Next Week</option>
+            </select>
+        </div>
+        <div class="location">
+            <span class="icon ion-ios-location" style="text-underline: dash-long;"> {{city}} </span>
+        </div>
+        <!--<ion-slide>-->
+        <ion-list>
+
+            <ion-item class="animate-repeat"
+                      ng-repeat="event in events track by $index">
+                <div class="card card-wrapper" on-tap="desc = !desc">
+                    <div class="item item-text-wrap" >
+                        <strong>{{event.eventTitle}}</strong>
+                        <img ng-src="{{event.image}}" style="background-image:url('http://www.engraversnetwork.com/files/placeholder.jpg'); height:250px; width:100%" >
+                        <br/>
+                        {{event.location}}
+                        <button style="float:right" ng-click="setEvents('event', event)">LIKE ME!!!</button>
+                        <br/>
+                        {{event.start}}
+                    </div>
+                    <div class="description" ng-show="desc">
+                        <span><a ng-href="{{event.url}}"> {{event.url}}</a></span>
+                        <span ng-bind-html="event.description"></span>
+                    </div>
+                </div>
+
+            </ion-item>
+
+        </ion-list>
+        <!--</ion-slide>-->
+        <!--</ion-slide-box>-->
+    </div>
+</ion-content>

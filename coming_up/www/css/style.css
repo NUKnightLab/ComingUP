@@ -1,0 +1,81 @@
+/* Empty. Add your own CSS if you like */
+.tabs {
+    top: 0;
+}
+.main{
+    padding-top: 50px;
+}
+.date {
+    position: fixed;
+    top:100px;
+    left:10px;
+    text-underline-mode: true;
+    z-index: 1;
+}
+
+.location {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    text-decoration: underline;
+}
+.description{
+    max-height: 200px;
+    display:inline-block;
+    width:100%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    text-align: left;
+    text-overflow: ellipsis;
+
+}
+#MainCateg{
+    padding-top: 30px
+}
+.list {
+    padding-top: 75px;
+}
+
+.list .item.animate-repeat {
+    line-height:39px;
+    padding-top:0;
+    padding-bottom: 0;
+    list-style:none;
+    box-sizing:border-box;
+    pointer-events: auto
+}
+.tabs-top{
+    padding-bottom:40px;
+}
+.list .item.animate-repeat.ng-move,
+.list .item.animate-repeat.ng-enter,
+.list .item.animate-repeat.ng-leave {
+    -webkit-transition:all linear 0.1s;
+    transition:all linear 0.1s;
+    pointer-events: auto
+}
+
+.list .item.animate-repeat.ng-leave.ng-leave-active,
+.list .item.animate-repeat.ng-move,
+.list .item.animate-repeat.ng-enter {
+    opacity:0;
+    max-height:0;
+    pointer-events: auto
+}
+
+.list .item.animate-repeat.ng-leave,
+.list .item.animate-repeat.ng-move.ng-move-active,
+.list .item.animate-repeat.ng-enter.ng-enter-active {
+    opacity:1;
+    max-height:25px;
+    pointer-events: auto
+}
+
+.card-wrapper{
+    margin: 10px 5px;
+}
+
+.card-wrapper .item{
+    padding: 5px 5px 5px 5px;
+    pointer-events: auto
+}

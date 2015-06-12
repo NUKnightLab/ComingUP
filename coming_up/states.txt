@@ -1,0 +1,24 @@
+        app.config(function ($stateProvider, $urlRouterProvider) {
+            $stateProvider
+                .state('home', {
+                    url: "/home",
+                    templateUrl: "/app/home/home.html",
+                    controller: "MainController"
+                })
+                .state('sports', {
+                    url: "/sports",
+                    templateUrl: "app/categories/sports.html",
+                    controller:"SportsController"
+                })
+                .state('food', {
+                    url: "/food",
+                    templateUrl: "app/categories/food.html",
+                    controller:"FoodController"
+                })
+                .state('entertainment', {
+                    url: "/entertainment",
+                    templateUrl: "app/categories/entertainment.html",
+                    controller:"EntertainmentController"
+                });
+                $$urlRouterProvider.otherwise('/home');
+        });

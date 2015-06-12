@@ -1,0 +1,30 @@
+<div class="modal" style="max-height: 400px;" on-drag-down="modal.hide()">
+    <header class="bar bar-header bar-positive">
+        <h1 class="title">Liked Events</h1>
+        <div class="button button-clear" ng-click="modal.hide()"><span class="icon ion-close"></span></div>
+    </header>
+    <ion-content has-header="true" padding="true">
+        <p>Liked Events</p>
+        <div style="padding-top: 50px">
+            <ion-item class="animate-repeat"
+                      ng-repeat="event in savedEvents track by $index">
+                <div class="card card-wrapper" on-tap="desc = !desc">
+                    <div class="item item-text-wrap" >
+                        <strong>{{event.eventTitle}}</strong>
+                        <span class="icon ion-close" style="float:right" on-tap="savedEvents.pop(event)"></span>
+                        <img ng-src="{{event.image}}" style="background-image:url('http://www.engraversnetwork.com/files/placeholder.jpg'); height:250px; width:100%" >
+                        <br/>
+                        {{event.location}}
+                        <br/>
+                        {{event.start}}
+                    </div>
+                    <div class="description" ng-show="desc">
+                        <span><a ng-href="{{event.url}}"> {{event.url}}</a></span>
+                        <span ng-bind-html="event.description"></span>
+                    </div>
+                </div>
+
+            </ion-item>
+        </div>
+    </ion-content>
+</div>
